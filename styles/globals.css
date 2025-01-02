@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.gasoek-one-regular {
+  font-family: "Gasoek One", serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.09em;
+}
+
+.gayathri-thin {
+  font-family: "Gayathri", serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.gayathri-regular {
+  font-family: "Gayathri", serif;
+  font-weight: 400;
+  font-style: normal;
+}
