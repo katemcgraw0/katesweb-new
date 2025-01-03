@@ -10,6 +10,10 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Gasoek+One&display=swap"
           rel="stylesheet"
         />
+         <link
+          href="https://fonts.googleapis.com/css2?family=Gasoek+One&family=Gayathri:wght@100;400;700&display=swap"
+          rel="stylesheet"
+        />
         </Head> 
 
       <body className="antialiased">

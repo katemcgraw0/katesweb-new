@@ -12,6 +12,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        gasoek: ['"Gasoek One"', 'serif'],
+        gayathri: ['"Gayathri"', 'serif'],
+      },
     },
   },
   plugins: [],
