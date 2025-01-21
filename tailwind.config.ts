@@ -9,9 +9,11 @@ export default {
   theme: {
     extend: {
       colors: {
+        'green-960': '#001200', // A custom very dark green,
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+
       fontFamily: {
         gasoek: ['"Gasoek One"', 'serif'],
         gayathri: ['"Gayathri"', 'serif'],
