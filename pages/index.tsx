@@ -8,7 +8,7 @@ import IconWithText from "@/components/IconWithText";
 import RotatingImages from "@/components/RotatingImages";
 import ProjectCard from "@/components/ProjectCard";
 import { FC, ReactElement, ReactNode } from "react";
-import { SiTailwindcss, SiNextdotjs, SiSqlite, SiCplusplus, SiNetlify, SiJinja,SiApachehadoop,SiFlask, SiTypescript } from "react-icons/si"; // Import additional icons
+import { SiTailwindcss, SiNextdotjs, SiSqlite, SiCplusplus, SiNetlify, SiJinja,SiApachehadoop,SiFlask, SiTypescript, SiVercel } from "react-icons/si"; // Import additional icons
 import { FaAws, FaReact, FaNodeJs, FaPython, FaFigma} from "react-icons/fa";
 import { RiSupabaseFill, RiJavascriptFill } from "react-icons/ri"
 
@@ -80,7 +80,7 @@ const Home: FC = () => {
       ],
     },
     {
-      imageSrc: "/Insta485.png",
+      imageSrc: "/insta485.png",
       title: "Insta485",
       description: `I created a full-stack mock instagram for my web dev class! On the front end, I used React to ensure seamless and responsive client-side interactions, and on the server side, I implemented custom REST API enpoints, which used Flask to access my SQLite database. SQLite allowed the application to have the ability to handle real-time user interactions, including account creation, post publication, commenting functionality, an infinite scroll feature. This was the first time that I manually implemented security measures such as password salting and hashing techniques to safeguard passwords stored within the SQLite database, as previously I had used Google OAuth or other secure login tools to avoid writing vulnerable code. I didn't put as much work into the front-end of this project, as I was more focused on learning new back-end technologies, but I am excited to use these new technologies in my projects moving fowards!`,
       technologies: [
@@ -235,6 +235,11 @@ const Home: FC = () => {
           icon: <FaAws />,
           label: "AWS",
           link: "https://aws.amazon.com/",
+        },
+        {
+          icon: <SiVercel />,
+          label: "Vercel",
+          link: "https://vercel.com/docs",
         },
       ],
       links: [
