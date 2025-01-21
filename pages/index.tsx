@@ -7,7 +7,7 @@ import { useState } from "react";
 import IconWithText from "@/components/IconWithText";
 import RotatingImages from "@/components/RotatingImages";
 import ProjectCard from "@/components/ProjectCard";
-import { FC, ReactElement } from "react";
+import { FC, ReactElement, ReactNode } from "react";
 import { SiTailwindcss, SiNextdotjs, SiSqlite, SiCplusplus, SiNetlify, SiJinja,SiApachehadoop,SiFlask, SiTypescript } from "react-icons/si"; // Import additional icons
 import { FaAws, FaReact, FaNodeJs, FaPython, FaFigma} from "react-icons/fa";
 import { RiSupabaseFill, RiJavascriptFill } from "react-icons/ri"
@@ -22,7 +22,7 @@ interface Project {
   imageSrc?: string;
   title: string;
   description: string;
-  technologies: ReactElement[]; // Updated to array of ReactNode for icons
+  technologies: { icon: ReactNode; label: string; link: string }[]; // Updated to array of ReactNode for icons
   links?: Link[];
   customComponent?: ReactElement;
 }
@@ -30,22 +30,52 @@ interface Project {
 const Home: FC = () => {
   const projects: Project[] = [
     {
-      customComponent: <RotatingImages />,
+      customComponent: <RotatingImages links= {[
+        { href: "https://thetatau-umich.org/", text: "Live" },
+        {
+          href: "https://github.com/thetatauthetagamma/THT-Website",
+          text: "Github",
+        },
+      ]}/>,
       title: "Theta Tau Website",
       description: `A website I helped build to showcase my professional engineering fraternity. It serves to inform prospective members of our fraternity's values and purpose. Members can sign in using Google OAuth to access additional features such as viewing internal events, pledging progress, and other internal features. I got the opportunity to lead a team of developers in this project, and help them learn the basics of web dev. This was an extremely rewarding project as it was a simple way to give back to my fraternity. This is definitely the project that I am most proud of.`,
       technologies: [
-        <FaReact key="react" />,
-        <SiNextdotjs key="nextjs" />,
-        <SiTailwindcss key="tailwind" />,
-        <FaNodeJs key="nodejs" />,
-        <SiNetlify key="netlify" />,
-        <RiSupabaseFill key="supabase" />,
+        {
+          icon: <FaReact />,
+          label: "React",
+          link: "https://reactjs.org/",
+        },
+        {
+          icon: <SiNextdotjs />,
+          label: "Next.js",
+          link: "https://nextjs.org/",
+        },
+        {
+          icon: <SiTailwindcss />,
+          label: "Tailwind CSS",
+          link: "https://tailwindcss.com/",
+        },
+        {
+          icon: <FaNodeJs />,
+          label: "Node.js",
+          link: "https://nodejs.org/",
+        },
+        {
+          icon: <SiNetlify />,
+          label: "Netlify",
+          link: "https://www.netlify.com/",
+        },
+        {
+          icon: <RiSupabaseFill />,
+          label: "Supabase",
+          link: "https://supabase.io/",
+        },
       ],
       links: [
         { href: "https://thetatau-umich.org/", text: "View Live" },
         {
           href: "https://github.com/thetatauthetagamma/THT-Website",
-          text: "Github Repo",
+          text: "Github",
         },
       ],
     },
@@ -54,13 +84,41 @@ const Home: FC = () => {
       title: "Insta485",
       description: `I created a full-stack mock instagram for my web dev class! On the front end, I used React to ensure seamless and responsive client-side interactions, and on the server side, I implemented custom REST API enpoints, which used Flask to access my SQLite database. SQLite allowed the application to have the ability to handle real-time user interactions, including account creation, post publication, commenting functionality, an infinite scroll feature. This was the first time that I manually implemented security measures such as password salting and hashing techniques to safeguard passwords stored within the SQLite database, as previously I had used Google OAuth or other secure login tools to avoid writing vulnerable code. I didn't put as much work into the front-end of this project, as I was more focused on learning new back-end technologies, but I am excited to use these new technologies in my projects moving fowards!`,
       technologies: [
-        <FaReact key="react" />,
-        <RiJavascriptFill key="js" />,
-        <FaPython key="python" />,
-        <SiFlask key="flask"/>,
-        <SiJinja key="jinja" />,
-        <SiSqlite key = "sql"/>,
-        <FaAws key="aws" />,
+        {
+          icon: <FaReact />,
+          label: "React",
+          link: "https://reactjs.org/",
+        },
+        {
+          icon: <RiJavascriptFill />,
+          label: "JavaScript",
+          link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+        },
+        {
+          icon: <FaPython />,
+          label: "Python",
+          link: "https://www.python.org/",
+        },
+        {
+          icon: <SiFlask />,
+          label: "Flask",
+          link: "https://flask.palletsprojects.com/",
+        },
+        {
+          icon: <SiJinja />,
+          label: "Jinja",
+          link: "https://jinja.palletsprojects.com/",
+        },
+        {
+          icon: <SiSqlite />,
+          label: "SQLite",
+          link: "https://www.sqlite.org/",
+        },
+        {
+          icon: <FaAws />,
+          label: "AWS",
+          link: "https://aws.amazon.com/",
+        },
       ],
     },
     {
@@ -69,8 +127,11 @@ const Home: FC = () => {
       title: "Pager",
       description: `For my advanced operating systems class, I designed and implemented a memory manager, or "pager," to manage virtual memory for application processes. This pager handles critical functions such as memory allocation, process switching, and page fault handling by maintaining virtual memory backed by swap space or files. The system uses a single-level page table and simulates memory management hardware, enabling complex memory operations like copy-on-write and eviction with a second-chance FIFO algorithm. This project emphasized efficient resource use and robust fault handling, and I developed extensive test cases to verify the pager’s functionality and performance.`,
       technologies: [
-        <SiCplusplus key="cplusplus" />,
-        
+        {
+          icon: <SiCplusplus />,
+          label: "C++",
+          link: "https://isocpp.org/",
+        },
       ],
     },
     {
@@ -78,8 +139,11 @@ const Home: FC = () => {
       title: "Network File Server",
       description: `I developed a multi-threaded network file server that provides a hierarchical file system accessible to clients via network requests. The server supports creating, reading, writing, and deleting files or directories while enforcing access control based on ownership. I implemented socket-based communication and used Boost threads with reader/writer locks to handle concurrency safely and efficiently. The project emphasized fault tolerance, secure handling of untrusted client input, and maintaining file system consistency during crashes, giving me hands-on experience in systems programming, concurrency, and client-server architecture.`,
       technologies: [
-        <SiCplusplus key="cplusplus" />,
-
+        {
+          icon: <SiCplusplus />,
+          label: "C++",
+          link: "https://isocpp.org/",
+        },
       ],
     },
     
@@ -89,9 +153,21 @@ const Home: FC = () => {
       title: "MapReduce",
       description: `I built a multi-worker and fault-tolerant MapReduce server in Python which can process user-submitted tasks. This project was a deep dive into distributed systems, aiming to implement a framework capable of executing MapReduce programs across a cluster of computers. Our framework comprised two main components: a Manager and multiple Workers. The Manager accepted user-submitted MapReduce jobs and distributed tasks among the Workers. Each Worker executed map and reduce tasks on the given data. The Manager ensured fault tolerance, task distribution, and system concurrency using OS-provided facilities such as threads and sockets for networking. One of the key challenges was ensuring efficient communication between the Manager and Workers while maintaining system robustness. We tackled this by implementing a reliable heartbeat mechanism, to monitor Worker status and reassign tasks if any Worker failed. To do this, we used UDP to send heartbeats and TCP for registration and ackowledgement communication. This experience not only strengthened my understanding of distributed systems but also enhanced my skills in Python programming, concurrency, and network communication`,
       technologies: [
-        <FaPython key="python" />,
-        <SiFlask key="flask"/>,
-        <FaAws key="aws" />,
+        {
+          icon: <FaPython />,
+          label: "Python",
+          link: "https://www.python.org/",
+        },
+        {
+          icon: <SiFlask />,
+          label: "Flask",
+          link: "https://flask.palletsprojects.com/",
+        },
+        {
+          icon: <FaAws />,
+          label: "AWS",
+          link: "https://aws.amazon.com/",
+        },
       ],
     },
    
@@ -103,11 +179,31 @@ const Home: FC = () => {
       
     `,
     technologies: [
-      <FaPython key="python" />,
-      <SiApachehadoop key="hadoop" />,
-      <SiFlask key="flask"/>,
-      <SiSqlite key = "sql"/>,
-      <FaAws key="aws" />,
+      {
+        icon: <FaPython />,
+        label: "Python",
+        link: "https://www.python.org/",
+      },
+      {
+        icon: <SiApachehadoop />,
+        label: "Hadoop",
+        link: "https://hadoop.apache.org/",
+      },
+      {
+        icon: <SiFlask />,
+        label: "Flask",
+        link: "https://flask.palletsprojects.com/",
+      },
+      {
+        icon: <SiSqlite />,
+        label: "SQLite",
+        link: "https://www.sqlite.org/",
+      },
+      {
+        icon: <FaAws />,
+        label: "AWS",
+        link: "https://aws.amazon.com/",
+      },
     ],
     },
     {
@@ -115,15 +211,35 @@ const Home: FC = () => {
       title: "Zodiacify",
       description: `A website I built that uses the Spotify API to access users' data and uses the OpenAI API to predict their zodiac sign based on this data. I also implemented features to display users' favorite artists and to give them song and artist recommendations. This was my first personal project, and I learned a lot about web dev and options for choosing my tech stack. This project was really fun for me because it engaged a lot of my friends in what I was working on and I got a lot of positive feedback:)`,
       technologies: [
-        <FaReact key="react" />,
-        <SiNextdotjs key="nextjs" />,
-        <SiTailwindcss key="tailwind" />,
-        <FaNodeJs key="nodejs" />,
-        <FaAws key="aws" />,
+        {
+          icon: <FaReact />,
+          label: "React",
+          link: "https://reactjs.org/",
+        },
+        {
+          icon: <SiNextdotjs />,
+          label: "Next.js",
+          link: "https://nextjs.org/",
+        },
+        {
+          icon: <SiTailwindcss />,
+          label: "Tailwind CSS",
+          link: "https://tailwindcss.com/",
+        },
+        {
+          icon: <FaNodeJs />,
+          label: "Node.js",
+          link: "https://nodejs.org/",
+        },
+        {
+          icon: <FaAws />,
+          label: "AWS",
+          link: "https://aws.amazon.com/",
+        },
       ],
       links: [
         { href: "https://zodiacify.vercel.app/", text: "View Live" },
-        { href: "https://github.com/katemcgraw0/Zodiacify", text: "Github Repo" },
+        { href: "https://github.com/katemcgraw0/Zodiacify", text: "Github" },
       ],
     },
     {
@@ -131,11 +247,31 @@ const Home: FC = () => {
       title: "Trendee.ai Frontend",
       description: `Collaborated with Trendee.ai, a company specializing in curating personalized feeds of TikTok videos for efficient content discovery by social media managers. My role centered on refining the application's front-end, where I translated the design from Figma into a seamless and user-friendly interface. This project was a unique experience for me as I navigated working with limited creative autonomy, implementing features precisely as depicted in Figma, and adapting to a predefined Tech Stack over which I had no control.`,
       technologies: [
-        <FaReact key="react" />,
-        <SiTypescript key="ts"/>,
-        <SiNextdotjs key="nextjs" />,
-        <FaNodeJs key="nodejs" />,
-        <FaFigma key="figma" />,
+        {
+          icon: <FaReact />,
+          label: "React",
+          link: "https://reactjs.org/",
+        },
+        {
+          icon: <SiTypescript />,
+          label: "TypeScript",
+          link: "https://www.typescriptlang.org/",
+        },
+        {
+          icon: <SiNextdotjs />,
+          label: "Next.js",
+          link: "https://nextjs.org/",
+        },
+        {
+          icon: <FaNodeJs />,
+          label: "Node.js",
+          link: "https://nodejs.org/",
+        },
+        {
+          icon: <FaFigma />,
+          label: "Figma",
+          link: "https://www.figma.com/",
+        },
       ],
       links: [],
     },
