@@ -74,7 +74,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
 
           {customComponent}
 
-          <h2 className="font-custom sm:text-2xl text-2xl text-center mb-4 text-white rounded-t-xl">
+          <h2 className="font-custom sm:text-2xl text-2xl text-center mb-2 text-white rounded-t-xl">
             {title}
           </h2>
           <div className="flex flex-wrap space-x-4 text-orange-500">

@@ -313,8 +313,8 @@ const Home: FC = () => {
         >
           <h1 className="pt-28 pb-4 text-4xl">ABOUT ME</h1>
           <div className="bg-orange-500 h-1 w-24"></div>
-          <div className="px-24 py-12 lg:w-1/2 md:w-3/4">
-            <p className="sm:text-2xl text-lg mb-4">
+          <div className="md:px-24 px-4 py-12 lg:w-1/2 md:w-3/4 font-gayathri text-sm md:text-lg">
+            <p className="sm:text-2xl text-lg mb-4 gasoek-one-regular">
               Hover on the icons below to learn more about me!
             </p>
             <div>
