@@ -348,25 +348,30 @@ const Home: FC = () => {
         </section>
 
         <section
-          id="projects"
-          className="min-h-screen bg-gradient-to-b from-green-900 to-green-950 text-white flex flex-col items-center"
-        >
-          <h1 className="pt-28 pb-4 text-4xl">PROJECTS</h1>
-          <div className="bg-orange-500 h-1 w-24 mb-8"></div>
+  id="projects"
+  className="py-16 bg-gradient-to-b from-green-900 to-green-950 text-white"
+>
+  <div className="container mx-auto px-4">
+    {/* Section Title */}
+    <h1 className="text-4xl font-bold text-center mb-4">PROJECTS</h1>
+    <div className="bg-orange-500 h-1 w-24 mx-auto mb-8"></div>
 
-          <div className="flex flex-col gap-8 mt-5 mb-5">
-            {projectRows.map((row, rowIndex) => (
-              <div
-                key={rowIndex}
-                className="flex md:flex-row flex-col gap-8 justify-center"
-              >
-                {row.map((project, index) => (
-                  <ProjectCard key={index} {...project} />
-                ))}
-              </div>
-            ))}
-          </div>
-        </section>
+    {/* Project Rows */}
+    <div className="space-y-8">
+      {projectRows.map((row, rowIndex) => (
+        <div
+          key={rowIndex}
+          className="flex flex-col md:flex-row md:space-x-8 space-y-8 md:space-y-0"
+        >
+          {row.map((project, index) => (
+            <ProjectCard key={index} {...project} />
+          ))}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
         <Footer></Footer>
       </main>
     </div>

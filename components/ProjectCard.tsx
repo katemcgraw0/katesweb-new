@@ -29,7 +29,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
 }) => {
   return (
     <div className="flex flex-col justify-center max-w-2xl flex-grow md:w-1/2 w-full">
-      <div className="bg-emerald-950 rounded-lg p-8 flex flex-grow flex-col border border-transparent transform transition-transform hover:scale-105 shadow-xl hover:shadow-2xl">
+      <div className="bg-emerald-950 rounded-lg p-8 flex flex-grow flex-col border border-transparent transform transition-transform hover:scale-105 shadow-xl hover:shadow-2xl mx-4 sm:mx-0">
         <div className="flex flex-col items-center">
           {/* Image Container */}
           {imageSrc && (
@@ -95,7 +95,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
               </a>
             ))}
           </div>
-          <p className="sm:text-sm text-lg mt-2 text-center text-white font-gayathri">
+          <p className="sm:text-sm md:text-md text-xs mt-2 text-center text-white font-gayathri ">
             {description}
           </p>
 
