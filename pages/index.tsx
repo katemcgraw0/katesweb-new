@@ -349,11 +349,11 @@ const Home: FC = () => {
 
         <section
   id="projects"
-  className="py-16 bg-gradient-to-b from-green-900 to-green-950 text-white"
+  className=" bg-gradient-to-b from-green-900 to-green-950 text-white"
 >
   <div className="container mx-auto px-4">
     {/* Section Title */}
-    <h1 className="text-4xl font-bold text-center mb-4">PROJECTS</h1>
+    <h1 className="text-4xl font-bold text-center mb-4 pt-28">PROJECTS</h1>
     <div className="bg-orange-500 h-1 w-24 mx-auto mb-8"></div>
 
     {/* Project Rows */}
