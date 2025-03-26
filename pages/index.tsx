@@ -321,7 +321,7 @@ const Home: FC = () => {
               <IconWithText
                 src="/icons/coding-icon.png"
                 alt="Coding Icon"
-                text="//I am an aspiring Software Engineer, previously interning at Walmart Global Tech working with the Data Ventures team. I am graduating in 2025 and searching for a post-grad job to pursue my passions!"
+                text="//I am graduating May 2025 and will be working as a Software Engineer at <a href='https://valon.com/' target='_blank' rel='noopener noreferrer className ='font-blue' '>Valon</a> on the Financial Admin team!"
               />
               <IconWithText
                 src="/icons/home-icon.png"
