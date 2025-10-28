@@ -149,7 +149,6 @@ const Home: FC = () => {
     
 
     {
-      
       imageSrc: "top_artists_over_time.png",
       title: "Spotify Data Tracker",
       description: `Check out what I've been listening to lately! I use github actions to continuouslyping the spotify api and save the data to a csv in my repo. I then analyze the data with python. Purely vibe coded, but still fun. Excited to compare it to my spotify wrapped.`,
@@ -175,6 +174,43 @@ const Home: FC = () => {
       ],
     },
    
+    {
+      imageSrc: "sourdough.png",
+      title: "Idle Sourdough Starter",
+      description: `Feed (tap) your sourdough starter to earn points! Compete with your friends to see who can get the highest score.`,
+      technologies: [
+        {
+          icon: <FaReact />,
+          label: "React",
+          link: "https://reactjs.org/",
+        },
+        {
+          icon: <SiVercel />,
+          label: "Vercel",
+          link: "https://vercel.com/",
+        },
+        {
+          icon: <SiNextdotjs />,
+          label: "Next.js",
+          link: "https://nextjs.org/",
+        },
+        {
+          icon: <RiSupabaseFill />,
+          label: "Supabase",
+          link: "https://supabase.io/",
+        },
+        {
+          icon: <SiClaude />,
+          label: "Claude Code",
+          link: "https://www.anthropic.com/",
+        },
+      ],
+      links: [
+        { href: "https://github.com/katemcgraw0/idle-sourdough-starter", text: "Github" },
+        { href: "https://idle-sourdough-starter.vercel.app/", text: "Live" },
+      ],
+    },
+
     {
       imageSrc: "/mapreduce.png",
       title: "MapReduce",
