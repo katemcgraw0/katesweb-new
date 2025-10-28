@@ -321,7 +321,7 @@ const Home: FC = () => {
               <IconWithText
                 src="/icons/coding-icon.png"
                 alt="Coding Icon"
-                text="//I am graduating May 2025 and will be working as a Software Engineer at <a href='https://valon.com/' target='_blank' rel='noopener noreferrer className ='font-blue' '>Valon</a> on the Financial Admin team!"
+                text="//I am a Software Engineer at <a href='https://valon.com/' target='_blank' rel='noopener noreferrer className ='font-blue' '>Valon</a> on the Financial Admin team!"
               />
               <IconWithText
                 src="/icons/home-icon.png"
@@ -331,17 +331,12 @@ const Home: FC = () => {
               <IconWithText
                 src="/icons/school-icon.png"
                 alt="School Icon"
-                text="//I am studying CS at UMich. Go Blue!!!!"
-              />
-              <IconWithText
-                src="/icons/teaching-icon.png"
-                alt="Teacher Icon"
-                text="//I am a TA for a CS Theory class,  <a href='https://eecs376.org/' target='_blank' rel='noopener noreferrer className ='font-blue' '>EECS 376</a>, and I love sharing my passion for learning with others."
+                text="//I studied CS at UMich. Go Blue!"
               />
               <IconWithText
                 src="/icons/hobbies-icon.png"
                 alt="Hobbies Icon"
-                text="//My hobbies include hiking, listening to a lot of music, slacklining, and sustainable fashion."
+                text="//My hobbies include hiking, slacklining, and sustainable fashion."
               />
             </div>
           </div>
