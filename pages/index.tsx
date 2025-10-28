@@ -152,7 +152,7 @@ const Home: FC = () => {
       
       imageSrc: "top_artists_over_time.png",
       title: "Spotify Data Tracker",
-      description: `Check out what I've been listening to lately! I use github actions to continuouslyping the spotify api and save the data to a csv in my repo. I then analyze the data with python. Purely vibe coded, but fun use of my skills. Excited to compare it to my spotify wrapped.`,
+      description: `Check out what I've been listening to lately! I use github actions to continuouslyping the spotify api and save the data to a csv in my repo. I then analyze the data with python. Purely vibe coded, but still fun. Excited to compare it to my spotify wrapped.`,
       technologies: [
         {
           icon: <FaPython />,
