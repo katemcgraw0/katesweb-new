@@ -8,7 +8,7 @@ import IconWithText from "@/components/IconWithText";
 import RotatingImages from "@/components/RotatingImages";
 import ProjectCard from "@/components/ProjectCard";
 import { FC, ReactElement, ReactNode } from "react";
-import { SiTailwindcss, SiNextdotjs, SiSqlite, SiCplusplus, SiNetlify, SiJinja,SiApachehadoop,SiFlask, SiTypescript, SiVercel } from "react-icons/si"; // Import additional icons
+import { SiTailwindcss, SiNextdotjs, SiSqlite, SiCplusplus, SiNetlify, SiJinja,SiApachehadoop,SiFlask, SiTypescript, SiVercel, SiGithub, SiClaude } from "react-icons/si"; // Import additional icons
 import { FaAws, FaReact, FaNodeJs, FaPython, FaFigma} from "react-icons/fa";
 import { RiSupabaseFill, RiJavascriptFill } from "react-icons/ri"
 
@@ -147,6 +147,33 @@ const Home: FC = () => {
       ],
     },
     
+
+    {
+      
+      imageSrc: "top_artists_over_time.png",
+      title: "Spotify Data Tracker",
+      description: `Check out what I've been listening to lately! I use github actions to continuouslyping the spotify api and save the data to a csv in my repo. I then analyze the data with python. Purely vibe coded, but fun use of my skills. Excited to compare it to my spotify wrapped.`,
+      technologies: [
+        {
+          icon: <FaPython />,
+          label: "Python",
+          link: "https://www.python.org/",
+        },
+        {
+          icon: <SiGithub />,
+          label: "Github Actions",
+          link: "https://github.com/features/actions",
+        },
+        {
+          icon: <SiClaude />,
+          label: "Claude Code",
+          link: "https://www.anthropic.com/",
+        },
+      ],
+      links: [
+        { href: "https://github.com/katemcgraw0/Spotify-Data-Tracker", text: "Github" },
+      ],
+    },
    
     {
       imageSrc: "/mapreduce.png",
